@@ -41,7 +41,7 @@ ng build --watch
 
 ### Now we can start editting our files
 
-Starting with: ```settings.py```
+#### Starting with: ```settings.py```
 
 ```python
 # make your list of installed apps look like this
@@ -74,7 +74,7 @@ Note we are electing not to use ```Auth``` and ```Admin``` so we have removed th
 Also note that we are adding ```WhiteNoiseMiddleware``` and ```SPAMiddleware``` to our list of middleware.
 Lastly note that ```STATIC_ROOT``` now points to the folder containing the ```index.html``` for our angular project.
 
-Next up: ```urls.py```
+#### Next up: ```urls.py```
 
 We will keep everything inside of one ```urls.py``` file to make our REST server that much easier to set up.
 
@@ -90,7 +90,7 @@ urlpatterns = [
 
 Note we are using Django 2+ for this, for older versions of Django use the ```url``` function instead of ```path```. Also as we are importing classes from within our views, we won't run into any issues from not using an ```apps``` folder even if we decide to start additional apps in this project so long as the class names are unique. If for some reason they aren't, we could consider using the ```as``` keyword when importing to alias them.
 
-Now to turn our attention to our ```views.py```
+#### Now to turn our attention to our ```views.py```
 
 ```python
 from django.http import JsonResponse
@@ -145,7 +145,7 @@ The next thing to notice is that we aren't using ```render``` or ```redirect```.
 
 One last thing to note. For our POST and PUT methods we will be receiving data from the front end inside of ```req.body```. This comes back to us as a unicode encoded string. To work with the data more conveniently we are decoding and converting to a dictionary with ```json.loads(req.body.decode())```.
 
-Wrapping up our back end, we'll finish off ```models.py```
+#### Wrapping up our back end, we'll finish off ```models.py```
 
 ```python
 from django.db import models

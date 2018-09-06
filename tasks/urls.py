@@ -15,9 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path
-from task_app import views as tasks
+from task_app.views import Tasks, TasksDetails
 
 urlpatterns = [
-    path('task', tasks.Tasks.as_view()),
-    path('task/<int:task_id>', tasks.TasksDetails.as_view())
+    path('task', Tasks.as_view()),
+    path('task/<int:task_id>', TasksDetails.as_view())
 ]

@@ -1,0 +1,26 @@
+<fieldset *ngIf="visible">
+    <legend>New Task</legend>
+    <form (submit)="onSubmit(task.id)" style="display:inline;">
+        <p>
+            Title: 
+            <input type="text" name="task.title" [(ngModel)]="task.title" />
+            <span *ngIf="errors.title">{{ errors.title }}</span>
+        </p>
+        <p>
+            Description: 
+            <input type="text" name="task.description" [(ngModel)]="task.description" />
+            <span *ngIf="errors.description">{{ errors.description }}</span>
+        </p>
+        <p>
+            Status: 
+            <select name="task.status" [(ngModel)]="task.status">
+                <option>pending</option>
+                <option>completed</option>
+                <option>cancelled</option>
+            </select>
+        </p>
+        <input type="submit" value="Update Task" />
+    </form>
+    <button (click)="cancel()">Cancel</button>
+    <button (click)="delete(task.id)">Delete</button>
+</fieldset>

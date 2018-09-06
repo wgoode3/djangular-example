@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>New Task</legend>
+  <form (submit)="onSubmit()">
+    <p>
+      Title: 
+      <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
+      <span *ngIf="errors.title">{{ errors.title }}</span>
+    </p>
+    <p>
+      Description: 
+      <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
+      <span *ngIf="errors.description">{{ errors.description }}</span>
+    </p>
+    <input type="submit" value="Create Task" />
+  </form>
+</fieldset>

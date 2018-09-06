@@ -1,0 +1,9 @@
+<h1>
+  Welcome to {{ title }}!
+</h1>
+
+<app-task-new (getNewTasks)="dataFromChild()"></app-task-new>
+
+<app-task-list #child2 (taskEvent)="dataFromTask($event)"></app-task-list>
+
+<app-task-edit #child (getNewTasks2)="dataFromChild2()"></app-task-edit>

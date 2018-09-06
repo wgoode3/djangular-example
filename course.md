@@ -2,7 +2,7 @@
 
 <img src="https://cdn-images-1.medium.com/max/1600/1*1OBwwxzJksMv0YDD-XmyBw.png" height="200px" alt="django"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png" height="200px" alt="angular">
 
-This course will assume you are already familiar with both Django and Angular. Django is a great web framework, and can be a capable REST server with little configuration. Angular is a good choice for a front end framework and we will be able to take full advantage of its component based architecture.
+This course will assume you are already familiar with both Django and Angular. Django is a great web framework, and can be a capable REST server with a little configuration. Angular is a good choice for a front end framework and we will be able to take full advantage of its component based architecture.
 
 ### Taking Django to the SPA
 
@@ -71,7 +71,8 @@ STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
 ```
 
 Note we are electing not to use ```Auth``` and ```Admin``` so we have removed them from ```INSTALLED_APPS```.
-Also note that ```STATIC_ROOT``` now points to the folder containing the ```index.html``` for our angular project.
+Also note that we are adding ```WhiteNoiseMiddleware``` and ```SPAMiddleware``` to our list of middleware.
+Lastly note that ```STATIC_ROOT``` now points to the folder containing the ```index.html``` for our angular project.
 
 Next up: ```urls.py```
 
@@ -79,15 +80,15 @@ We will keep everything inside of one ```urls.py``` file to make our REST server
 
 ```python
 from django.urls import path
-from task_app import views as tasks
+from task_app.views import Tasks, TasksDetails
 
 urlpatterns = [
-	path('task', tasks.Tasks.as_view()),
-	path('task/<int:task_id>', tasks.TasksDetails.as_view())
+    path('task', Tasks.as_view()),
+    path('task/<int:task_id>', TasksDetails.as_view())
 ]
 ```
 
-Note we are using Django 2+ for this, for older versions of Django use the ```url``` function instead of ```path```. Also we have decided to "alias" the ```views``` we're importing using the keyword ```as```. By aliasing we can avoid having to create an ```apps``` folder even if we decide to use multiple apps.
+Note we are using Django 2+ for this, for older versions of Django use the ```url``` function instead of ```path```. Also as we are importing classes from within our views, we won't run into any issues from not using an ```apps``` folder even if we decide to start additional apps in this project so long as the class names are unique. If for some reason they aren't, we could consider using the ```as``` keyword when importing to alias them.
 
 Now to turn our attention to our ```views.py```
 

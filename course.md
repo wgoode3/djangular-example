@@ -264,3 +264,10 @@ class Task(models.Model):
 
     objects = TaskManager()
 ```
+
+## Assignment Ideas
+
+* copy in existing angular client code and modify the REST server to connect to it
+* django angular login and registration
+* django angular e-commerce site
+* django angular file upload (base64)

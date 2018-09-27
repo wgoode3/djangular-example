@@ -39,6 +39,8 @@ cd ../..
 ng build --watch
 ```
 
+<hr>
+
 ### Now we can start editting our files
 
 #### Starting with: ```settings.py```
@@ -73,6 +75,8 @@ STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
 Note we are electing not to use ```Auth``` and ```Admin``` so we have removed them from ```INSTALLED_APPS```.
 Also note that we are adding ```WhiteNoiseMiddleware``` and ```SPAMiddleware``` to our list of middleware.
 Lastly note that ```STATIC_ROOT``` now points to the folder containing the ```index.html``` for our angular project.
+
+<hr>
 
 ### OPTIONAL: Using a database other than sqlite
 
@@ -137,6 +141,8 @@ DATABASES = {
 
 You may need to adjust the values of ```USER``` and ```PASSWORD``` accordingly. Make sure the ```NAME``` is the same as the name of the schema you created in MySQL above.
 
+<hr>
+
 #### Next up: ```urls.py```
 
 We will keep everything inside of one ```urls.py``` file to make our REST server that much easier to set up.
@@ -152,6 +158,8 @@ urlpatterns = [
 ```
 
 Note we are using Django 2+ for this, for older versions of Django use the ```url``` function instead of ```path```. Also as we are importing classes from within our views, we won't run into any issues from not using an ```apps``` folder even if we decide to start additional apps in this project so long as the class names are unique. If for some reason they aren't, we could consider using the ```as``` keyword when importing to alias them.
+
+<hr>
 
 #### Now to turn our attention to our ```views.py```
 
@@ -207,6 +215,8 @@ Using class based views we can handle all 5 routes we need with only two classes
 The next thing to notice is that we aren't using ```render``` or ```redirect```. Aside from serving the one static ```index.html``` page, we want this server to only respond with JSON, so every route receives a JsonResponse.
 
 One last thing to note. For our POST and PUT methods we will be receiving data from the front end inside of ```req.body```. This comes back to us as a unicode encoded string. To work with the data more conveniently we are decoding and converting to a dictionary with ```json.loads(req.body.decode())```.
+
+<hr>
 
 #### Wrapping up our back end, we'll finish off ```models.py```
 

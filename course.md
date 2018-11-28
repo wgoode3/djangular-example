@@ -171,11 +171,11 @@ from django.views import View
 
 class Tasks(View):
 
-    def get(self, req):
+    def get(self, request):
         return JsonResponse({'status': 200, 'tasks': list(Task.objects.values().all())})
 
-    def post(self, req):
-        results = Task.objects.add_task(json.loads(req.body.decode()))
+    def post(self, request):
+        results = Task.objects.add_task(json.loads(request.body.decode()))
         if isinstance(results, Task):
             return JsonResponse({'status': 200, 'task_id': results.id})
         else:
@@ -183,17 +183,17 @@ class Tasks(View):
 
 class TasksDetails(View):
 
-    def get(self, req, task_id):
+    def get(self, request, task_id):
         return JsonResponse({'status': 200, 'task': Task.objects.values().get(id=task_id)})
 
-    def put(self, req, task_id):
-        results = Task.objects.update_task(json.loads(req.body.decode()), task_id)
+    def put(self, request, task_id):
+        results = Task.objects.update_task(json.loads(request.body.decode()), task_id)
         if isinstance(results, Task):
             return JsonResponse({'status': 200, 'task_id': results.id})
         else:
             return JsonResponse({'status': 200, 'errors': results})
 
-    def delete(self, req, task_id):
+    def delete(self, request, task_id):
         Task.objects.filter(id=task_id).delete()
         return JsonResponse({'status': 200})
 ```

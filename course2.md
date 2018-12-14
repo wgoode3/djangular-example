@@ -94,6 +94,8 @@ At this we should be able to view our angular app's ```index.html``` when we run
 
 Let's start with an existing Angular frontend [click to download](https://github.com/wgoode3/djangular-example/raw/master/client.zip) and let us replace our existing client folder with this.
 
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/demo.gif" alt="demo.gif">
+
 In order to get and receive requests, we need to first configure our ```urls.py```.
 
 ```python

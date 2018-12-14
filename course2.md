@@ -92,12 +92,7 @@ At this we should be able to view our angular app's ```index.html``` when we run
 
 ### How do we get and receive data from our Django Backend?
 
-Let's start with an existing Angular frontend...
-
-# TODO: INSERT DOWNLOAD LINK HERE
-# TODO: INSERT WIREFRAME IMAGE HERE
-
-and let us replace our existing client folder with this.
+Let's start with an existing Angular frontend [click to download](https://github.com/wgoode3/djangular-example/raw/master/client.zip) and let us replace our existing client folder with this.
 
 In order to get and receive requests, we need to first configure our ```urls.py```.
 

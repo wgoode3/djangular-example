@@ -53,9 +53,13 @@ Then proceed to make a new project as normal, I would suggest this folder struct
 
 <hr>
 
-### Now to start editting our files
+# Connecting Angular + Middleware Settings
 
-#### Starting with: ```settings.py```
+<a href="https://www.youtube.com/watch?v=8KoyisKqLlc" target="_blank">
+	<img src="https://i.ytimg.com/vi/8KoyisKqLlc/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCYdFcQBPu8mG-9HvUUilJaU-RSVA" alt="thumbnail">
+</a>
+
+### Start by editting our ```settings.py``
 
 ```python
 # make your list of installed apps look like this
@@ -84,17 +88,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, "client/dist/client/")
 STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
 ```
 
-At this we should be able to view our angular app's ```index.html``` when we run ```ng build --watch```.
+Note that we have elected to skip the ```apps``` folder so we can add simply ```"papaya_app"``` to our list of installed apps. Also we removed a few unused apps, namely ```'django.contrib.admin'``` and ```'django.contrib.auth'```. Next be sure to add ```'whitenoise.middleware.WhiteNoiseMiddleware'``` and ```'spa.middleware.SPAMiddleware'``` to our list of middleware. Also we decided to remove a few unused middleware as we did above with the apps, namely ```'django.middleware.csrf.CsrfViewMiddleware'```, ```'django.contrib.auth.middleware.AuthenticationMiddleware'```, and ```'django.contrib.messages.middleware.MessageMiddleware'```.
 
-# TODO: INSERT VIDEO HERE
+Lastly be sure to add in ```STATIC_ROOT``` and point it to the ```dist``` folder in our angular app and also add the ```STATICFILES_STORAGE``` line.
+
+After this we should be able to view our angular app's ```index.html``` when we run ```ng build --watch``` and ```python manage.py runserver```.
 
 <hr>
 
 ### How do we get and receive data from our Django Backend?
 
-Let's start with an existing Angular frontend [click to download](https://github.com/wgoode3/djangular-example/raw/master/client.zip) and let us replace our existing client folder with this.
-
-<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/demo.gif" alt="demo.gif">
+# TODO: INSERT VIDEO HERE
 
 In order to get and receive requests, we need to first configure our ```urls.py```.
 
@@ -151,3 +155,11 @@ Using class based views we can handle all 5 routes we need with only two classes
 The next thing to notice is that we aren't using ```render``` or ```redirect```. Aside from serving the one static ```index.html``` page, we want this server to only respond with JSON, so every route receives a JsonResponse.
 
 <hr>
+
+# Assignment 1 - Django Angular Tasks
+
+Let's start with an existing Angular frontend [click to download](https://github.com/wgoode3/djangular-example/raw/master/client.zip) and let us replace our existing client folder with this.
+
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/demo.gif" alt="demo.gif">
+
+

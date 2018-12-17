@@ -55,8 +55,8 @@ Then proceed to make a new project as normal, I would suggest this folder struct
 
 # Connecting Angular + Middleware Settings
 
-<a href="https://www.youtube.com/watch?v=8KoyisKqLlc" target="_blank">
-	<img src="https://i.ytimg.com/vi/8KoyisKqLlc/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCYdFcQBPu8mG-9HvUUilJaU-RSVA" alt="thumbnail">
+<a href="https://youtu.be/8KoyisKqLlc" target="_blank">
+	<img src="https://i.ytimg.com/vi/8KoyisKqLlc/hqdefault.jpg" alt="thumbnail">
 </a>
 
 ### Start by editting our ```settings.py``

@@ -65,7 +65,7 @@ Then proceed to make a new project as normal, I would suggest this folder struct
 # make your list of installed apps look like this
 
 INSTALLED_APPS = [
-	'task_app',
+	'papaya_app',
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.messages',
@@ -88,7 +88,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "client/dist/client/")
 STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
 ```
 
-Note that we have elected to skip the ```apps``` folder so we can add simply ```"papaya_app"``` to our list of installed apps. Also we removed a few unused apps, namely ```'django.contrib.admin'``` and ```'django.contrib.auth'```. Next be sure to add ```'whitenoise.middleware.WhiteNoiseMiddleware'``` and ```'spa.middleware.SPAMiddleware'``` to our list of middleware. Also we decided to remove a few unused middleware as we did above with the apps, namely ```'django.middleware.csrf.CsrfViewMiddleware'```, ```'django.contrib.auth.middleware.AuthenticationMiddleware'```, and ```'django.contrib.messages.middleware.MessageMiddleware'```.
+Note that we have elected to skip the ```apps``` folder so we can simply add ```'papaya_app'``` to our list of installed apps. Also we removed a few unused apps, namely ```'django.contrib.admin'``` and ```'django.contrib.auth'```. Next be sure to add ```'whitenoise.middleware.WhiteNoiseMiddleware'``` and ```'spa.middleware.SPAMiddleware'``` to our list of middleware. Also we decided to remove a few unused middleware as we did above with the apps, namely ```'django.middleware.csrf.CsrfViewMiddleware'```, ```'django.contrib.auth.middleware.AuthenticationMiddleware'```, and ```'django.contrib.messages.middleware.MessageMiddleware'```.
 
 Lastly be sure to add in ```STATIC_ROOT``` and point it to the ```dist``` folder in our angular app and also add the ```STATICFILES_STORAGE``` line.
 
@@ -98,7 +98,9 @@ After this we should be able to view our angular app's ```index.html``` when we 
 
 ### How do we get and receive data from our Django Backend?
 
-# TODO: INSERT VIDEO HERE
+<a href="https://youtu.be/OHww_idvEss" target="_blank">
+	<img src="https://i.ytimg.com/vi/OHww_idvEss/hqdefault.jpg" alt="thumbnail">
+</a>
 
 In order to get and receive requests, we need to first configure our ```urls.py```.
 

@@ -1,17 +1,17 @@
 # Using Angular with Django
 
-<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/New%20Mockup%201.png" alt="diagram.png">
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/New%20Mockup%201.png" alt="diagram.png" width="800px">
 
 This course will assume you are already familiar with both Django and Angular. Django is a great web framework, and can be a capable REST server with a little configuration. Angular is a good choice for a front end framework and we will be able to take full advantage of its component based architecture. Moreover, both Django and Angular are "opinionated" about how they want us to code our projects. They provide us nicely bundled set of tools they prefer we use and their is generally one "right way" to go about solving our problems. In that sense combining Django and Angular can give us a very consistent and well-thought-out approach to our website.
 
 <hr>
 
-### Taking Django to the SPA
+# Taking Django to the SPA
 
 By default, Django wants us to create multiple templates (html files with embedded python) for the server to render to our users. If instead we would like to create a **S**ingle **P**age **A**pplication we will have to play around with the settings somewhat. Enter [django-spa](https://github.com/metakermit/django-spa).
 Django SPA is a middleware that will make it easy for us to make Django serve up our ```index.html``` for us.
 
-#### Before we get started, make sure you have all of the following installed:
+### Before we get started, make sure you have all of the following installed:
 * [Python 3.5 or newer](https://www.python.org/downloads/)
 * [Virtualenv](https://virtualenv.pypa.io/en/latest/installation/)
 * [Node.js](https://nodejs.org/en/download/)
@@ -23,7 +23,7 @@ Django SPA is a middleware that will make it easy for us to make Django serve up
   $ sudo npm i -g @angular/cli
   ```
 
-#### Let's start out by creating a new virtual environment and installing Django along with Django SPA.
+### Let's start out by creating a new virtual environment and installing Django along with Django SPA.
 
 ```shell
 virtualenv venv -p python3
@@ -59,7 +59,7 @@ Then proceed to make a new project as normal, I would suggest this folder struct
 	<img src="https://i.ytimg.com/vi/8KoyisKqLlc/hqdefault.jpg" alt="thumbnail">
 </a>
 
-### Start by editting our ```settings.py``
+### Start by editting our settings.py
 
 ```python
 # make your list of installed apps look like this
@@ -171,3 +171,70 @@ Let's start with an existing Angular frontend [click to download](https://github
 <strong>Bonus Challenge:</strong> Alter the client code to display validation errors.
 
 <strong>Hacker Challenge:</strong> Alter the client code to also use [front end validations](https://angular.io/guide/form-validation).
+
+<hr>
+
+# Optional - Using a database other than SQLite
+
+While SQLite is a very convenient database when developing, your project might benefit from a different database. In Django changing the database can be very easy to do, and we'll include examples for how you might do that.
+
+### Mongo
+
+If you want to connect to a Mongo database using Django, the easiest way might be [Djongo](https://nesdis.github.io/djongo/).
+
+First we need to install the ```djongo``` package using pip. Make sure your virtualenvironment is active.
+
+```shell
+pip install djongo
+```
+
+Then we will modify the ```DATABASE``` setting in the ```settings.py``` accordingly.
+
+```python
+# Replace the DATABASE setting with this...
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'amazing_tasks'
+    }
+}
+```
+
+That's it. Assuming mongodb is running, it will create a ```db``` called 'amazing_tasks' and connect to it. You can continue to use the Django ORM as you have previously.
+
+### MySQL
+
+Connecting to a MySQL database will be a little bit more involved. These instructions will assume you are using it during deployment to an Ubuntu server.
+
+Make sure your virtualenvironment is active
+
+```shell
+sudo apt-get install python3-dev
+sudo apt-get install python3-dev libmysqlclient-dev
+sudo apt-get install mysql-server
+pip install mysqlclient
+mysql -u root -p
+# enter your password (root) when prompted
+create schema amazing_tasks;
+exit
+```
+
+Then we will modify the ```DATABASE``` setting in the ```settings.py``` accordingly.
+
+```python
+# Replace the DATABASE setting with this...
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'amazing_tasks',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+} 
+```
+
+You may need to adjust the values of ```USER``` and ```PASSWORD``` accordingly. Make sure the ```NAME``` is the same as the name of the schema you created in MySQL above.
+
+<hr>

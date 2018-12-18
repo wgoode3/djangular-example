@@ -238,3 +238,15 @@ DATABASES = {
 You may need to adjust the values of ```USER``` and ```PASSWORD``` accordingly. Make sure the ```NAME``` is the same as the name of the schema you created in MySQL above.
 
 <hr>
+
+# Assignment 2 - Django Angular Login and Registration
+
+### Objectives:
+* Gain more practice using Django with Angular
+* Practice keeping track of the user's state
+
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/logandreg.png" alt="wireframe image">
+
+Build a login and registration form using Django and Angular. 
+
+<strong>Bonus Challenge:</strong> Prevent the user from accessing the success page if they are not logged in.

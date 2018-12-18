@@ -1,6 +1,6 @@
 # Using Angular with Django
 
-<img src="https://cdn-images-1.medium.com/max/1600/1*1OBwwxzJksMv0YDD-XmyBw.png" height="200px" alt="django"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png" height="200px" alt="angular">
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/New%20Mockup%201.png" alt="diagram.png">
 
 This course will assume you are already familiar with both Django and Angular. Django is a great web framework, and can be a capable REST server with a little configuration. Angular is a good choice for a front end framework and we will be able to take full advantage of its component based architecture. Moreover, both Django and Angular are "opinionated" about how they want us to code our projects. They provide us nicely bundled set of tools they prefer we use and their is generally one "right way" to go about solving our problems. In that sense combining Django and Angular can give us a very consistent and well-thought-out approach to our website.
 

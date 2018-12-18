@@ -160,8 +160,14 @@ The next thing to notice is that we aren't using ```render``` or ```redirect```.
 
 # Assignment 1 - Django Angular Tasks
 
-Let's start with an existing Angular frontend [click to download](https://github.com/wgoode3/djangular-example/raw/master/client.zip) and let us replace our existing client folder with this.
+### Objectives:
+* Practice using Django with Angular
+* Make a backend to use with existing code
 
-<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/demo.gif" alt="demo.gif">
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/tasks.png" alt="wireframe">
 
+Let's start with an existing Angular frontend [click to download](https://github.com/wgoode3/djangular-example/raw/master/client.zip) and let us replace our existing client folder with this. Build out the backend with restful routes to create, read, update, and delete tasks. 
 
+<strong>Bonus Challenge:</strong> Alter the client code to display validation errors.
+
+<strong>Hacker Challenge:</strong> Alter the client code to also use [front end validations](https://angular.io/guide/form-validation).

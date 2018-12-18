@@ -256,7 +256,7 @@ Build a login and registration form using Django and Angular.
 # Assignment 3 - Django Angular E-Commerce (OPTIONAL)
 
 ### Objectives:
-* Build a complicated project using many relationships
+* Build a complex project using many relationships
 
 <img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/ecommerce.png" alt="ecommerce wireframe">
 

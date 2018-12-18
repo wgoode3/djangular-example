@@ -96,7 +96,7 @@ After this we should be able to view our angular app's ```index.html``` when we 
 
 <hr>
 
-### How do we get and receive data from our Django Backend?
+# Getting and Posting data to our Django Backend?
 
 <a href="https://youtu.be/OHww_idvEss" target="_blank">
 	<img src="https://i.ytimg.com/vi/OHww_idvEss/hqdefault.jpg" alt="thumbnail">

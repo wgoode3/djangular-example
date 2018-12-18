@@ -245,8 +245,17 @@ You may need to adjust the values of ```USER``` and ```PASSWORD``` accordingly. 
 * Gain more practice using Django with Angular
 * Practice keeping track of the user's state
 
-<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/logandreg.png" alt="wireframe image">
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/logandregupdate.png" alt="wireframe image">
 
 Build a login and registration form using Django and Angular. 
 
 <strong>Bonus Challenge:</strong> Prevent the user from accessing the success page if they are not logged in.
+
+# Assignment 3 - Django Angular E-Commerce (OPTIONAL)
+
+### Objectives:
+* Build a complicated project using many relationships
+
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/ecommerce.png" alt="ecommerce wireframe">
+
+Try to build this e commerce website using Django and Angular.

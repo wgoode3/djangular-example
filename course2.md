@@ -251,6 +251,8 @@ Build a login and registration form using Django and Angular.
 
 <strong>Bonus Challenge:</strong> Prevent the user from accessing the success page if they are not logged in.
 
+<hr>
+
 # Assignment 3 - Django Angular E-Commerce (OPTIONAL)
 
 ### Objectives:

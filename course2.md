@@ -245,7 +245,7 @@ You may need to adjust the values of ```USER``` and ```PASSWORD``` accordingly. 
 * Gain more practice using Django with Angular
 * Practice keeping track of the user's state
 
-<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/logandregupdate.png" alt="wireframe image">
+<img src="https://raw.githubusercontent.com/wgoode3/djangular-example/master/logandregupdated.png" alt="wireframe image">
 
 Build a login and registration form using Django and Angular. 
 
